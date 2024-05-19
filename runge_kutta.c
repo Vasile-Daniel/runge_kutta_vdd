@@ -7,7 +7,7 @@
 // Function to define the differential equation (dy/dx)
 double f(double x, double y) {
     // For electrical circuits, let's use the equation for charging a capacitor
-    double R = 1000; // Resistance (in ohms)
+    double R = 100; // Resistance (in ohms)
     double C = 0.001; // Capacitance (in farads)
     double Vin = 5; // Input voltage (in volts)
     

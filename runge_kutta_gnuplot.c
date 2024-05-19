@@ -2,10 +2,10 @@
 #include <math.h>
 
 #define VIN 5.0   // Input voltage (in volts)
-#define R   1000  // Resistance (in ohms)
-#define C   0.001 // Capacitance (in farads)
+#define R   10  // Resistance (in ohms)
+#define C   0.01 // Capacitance (in farads)
 #define T   10.0  // Total time (in seconds)
-#define DT  0.001  // Time step (in seconds)
+#define DT  0.0001  // Time step (in seconds)
 
 // Function to define the differential equation (dy/dt) for charging a capacitor
 double f(double t, double v_c) {
@@ -40,9 +40,12 @@ int main() {
         return 1;
     }
 
-    fprintf(gnuplot, "set title 'Capacitor Charging'\n");
+    fprintf(gnuplot, "set terminal 'png'\n");
+    fprintf(gnuplot, "set output 'Capacitor Charging.png'\n");
+    fprintf(gnuplot, "set title 'Capacitor Charging 1'\n");
     fprintf(gnuplot, "set xlabel 'Time (s)'\n");
     fprintf(gnuplot, "set ylabel 'Voltage (V)'\n");
+    fprintf(gnuplot, "set grid\n");
     fprintf(gnuplot, "plot '-' with lines\n");
 
     double t = 0.0;
